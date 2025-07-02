@@ -3,8 +3,28 @@ import csv
 import requests
 from collections import defaultdict
 
-with open('investments.csv', newline='', encoding='utf-8') as f:
-    reader = csv.reader(f)
+with open('investments.csv', newline='', encoding='utf-8') as f1, open('invest_03.csv', newline='', encoding='utf-8') as f2, open('invest_04.csv', newline='', encoding='utf-8') as f3, open('invest_05.csv', newline='', encoding='utf-8') as f4:
+    reader = []
+    reader_1 = csv.reader(f2)
+    reader_2 = csv.reader(f3)
+    reader_3 = csv.reader(f4)
+    reader_4 = csv.reader(f1)
+    for i in reader_1:
+        reader.append(i)
+    for i in reader_2:
+        if i[0] == 'clientID':
+            continue
+        reader.append(i)
+    for i in reader_3:
+        if i[0] == 'clientID':
+            continue
+        reader.append(i)
+    for i in reader_4:
+        if i[0] == 'clientID':
+            continue
+        reader.append(i)
+
+
 
 
     # entered_site =
